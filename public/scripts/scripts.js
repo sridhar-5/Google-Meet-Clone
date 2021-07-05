@@ -59,5 +59,5 @@ const nextbutton = document.querySelector(".next-btn");
 nextbutton.addEventListener("click", nextconcept);
 
 function nextconcept(event) {
-  console.log(event.target.classList[0].parent);
+  console.log(event.target.parentElement.classList[0]);
 }
