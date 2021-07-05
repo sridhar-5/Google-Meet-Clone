@@ -1,0 +1,195 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  justify-content: space-between;
+}
+#Google {
+  font-family: "Poppins", sans-serif;
+}
+#meet {
+  font-family: "Poppins", sans-serif;
+  font-weight: 50px;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.right > a {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+#google-meet {
+  height: 30px;
+  width: 50px;
+  display: flex;
+}
+
+#Google {
+  text-decoration: none;
+  color: grey;
+  font-size: 25px;
+}
+#meet {
+  text-decoration: none;
+  color: grey;
+  font: 24px;
+}
+.Google-apps {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+  background-color: #fff;
+  background-image: url("//ssl.gstatic.com/gb/images/i1_1967ca6a.png");
+  background-position: -132px -38px;
+  opacity: 0.5;
+  border: none;
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 34px;
+}
+
+#date {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.mainbody {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bodyLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 150px 0 0 200px;
+  font-family: "Roboto", sans-serif;
+}
+.Maincaption {
+  font-size: 50px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Secondarycaption {
+  font-size: 50px;
+  display: flex;
+  letter-spacing: 1px;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 1.4em;
+}
+.meetingControls {
+  display: flex;
+  flex-direction: row;
+}
+.startmeeting {
+  font-family: "Noto Sans JP", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(52, 116, 224);
+  color: white;
+  margin: 50px 30px 0 0;
+  font-size: 17px;
+  border-style: none;
+  padding: 10px 15px 10px 10px;
+  border-radius: 3px;
+  width: fit-content;
+}
+.videoicon {
+  display: flex;
+}
+.meetbuttontext {
+  display: flex;
+}
+
+.meetingcodefield {
+  display: flex;
+}
+
+#meetingcode {
+  background-color: white;
+  background-image: url("../assets/keyboard.svg");
+  background-repeat: no-repeat;
+  font-size: 17px;
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 50px 30px 0 0;
+  padding: 12px 20px 12px 40px;
+  background-position: 10px 13px;
+  height: fit-content;
+  border-radius: 3px;
+  width: 200px;
+  border: 1px solid grey;
+}
+
+.bodyRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 150px 250px 0 0;
+}
+
+.imageshow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.imageshow > button {
+  border: none;
+  background-color: white;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-start;
+  flex-wrap: wrap;
+  height: fit-content;
+}
+#info {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-self: center;
+  justify-self: start;
+  font-weight: 250;
+  font-size: 30px;
+  color: grey;
+  padding: 0;
+  margin: 0;
+}
+
+#infotext {
+  display: flex;
+  font-size: 15px;
+  font-family: "Noto Sans JP", sans-serif;
+  overflow-wrap: break-word;
+}
