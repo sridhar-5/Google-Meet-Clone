@@ -42,9 +42,9 @@ const slideshowHeads = [
 ];
 
 const slideshowTexts = [
-  `Click&nbsp;<b>New meeting</b>&nbsp;to get a link you can send to people you want ot meet with`,
+  `Click New meeting to get a link you can send to people you want ot meet with`,
   `To see more peopleat the same time, go to Change layout in More options menu`,
-  `Click&nbsp;<b>New meeting</b>&nbsp;to schedule the meetings in Google Calender and send invites to participants`,
+  `Click New meeting to schedule the meetings in Google Calender and send invites to participants`,
   `No one can join a meeting unless invited or admitted by the host`,
 ];
 
