@@ -1,2 +1,3 @@
-# web-chat
-web-chat is a real-time chat app created using node and web sockets
+#Google Meet Clone 
+
+google meet clone is the actual google clone made using nodejs and web sockets
