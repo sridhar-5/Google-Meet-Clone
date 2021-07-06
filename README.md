@@ -1,3 +1,4 @@
-#Google Meet Clone 
+# Google Meet Clone 
 
-google meet clone is the actual google clone made using nodejs and web sockets
+For this purpose, plan is to try using a MongoDB, Express.js framework, and scoket.io for real-time events. Firstly, had plans to make 
+a real-time chat app but later thought of extending this project to a complete google meet clone.
