@@ -72,15 +72,17 @@
         </div>
 
         <div class="meetingControls">
-          <button class="startmeeting">
-            <img class="videoicon" src="./assets/videocall.svg" />
-            <div class="meetbuttontext">New meeting</div>
-          </button>
-
-          <div class="meetingcodefield">
-            <input id="meetingcode" placeholder="Enter a code or link" />
-          </div>
-
+          <form action="http://localhost:3000/room" method="GET">
+            <button class="startmeeting">
+              <img class="videoicon" src="./assets/videocall.svg" />
+              <div class="meetbuttontext">New meeting</div>
+            </button>
+          </form>
+          <form action="" method="GET">
+            <div class="meetingcodefield">
+              <input id="meetingcode" placeholder="Enter a code or link" />
+            </div>
+          </form>
           <div class="divider"></div>
         </div>
       </div>
