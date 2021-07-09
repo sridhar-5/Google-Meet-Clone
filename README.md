@@ -16,5 +16,6 @@ Firsly, The Frontend of the Home Page is made with html (Yeah, Very Very Silly. 
 - Added the feature to allow others to stream their videos
 - Styling the room to match google meet
 - Ability to send and recieve messages
-- # Adding buttons in the video chat Ex: Mute/unmute, video on/off
-  Project status : in-progress
+- Adding buttons in the video chat Ex: Mute/unmute, video on/off
+
+### Project status : in-progress
