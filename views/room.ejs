@@ -4,15 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Room</title>
+    <title id="title-id"></title>
     <link rel="stylesheet" href="/Styles/RoomStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d2c32395cb.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       var Room_id = "<%= roomID %>";
     </script>
   </head>
   <body>
-    <div class="videoGrid"></div>
+    <div class="main">
+      <div class="main_left">
+        <div class="main_left_videos">
+          <div class="videoGrid"></div>
+        </div>
+      </div>
+      <div class="main_right">
+        <h3>Chat</h3>
+      </div>
+    </div>
+    <div class="main_controls">
+      <div class="meeting_id"></div>
+      <div class="main_middle_controls">
+        <i class="button fas fa-microphone fa-lg"></i>
+        <i class="button fas fa-video fa-lg"></i>
+        <i class="button far fa-closed-captioning fa-lg"></i>
+        <i class="button fas fa-share-square fa-lg"></i>
+        <i class="button fas fa-ellipsis-v fa-lg"></i>
+        <i
+          style="background-color: rgb(217, 81, 64)"
+          class="button fas fa-phone-alt fa-lg"
+        ></i>
+      </div>
+      <div class="main_right_controls">
+        <i class="right-button fas fa-info-circle fa-lg"></i>
+        <i class="right-button fas fa-user-friends fa-lg"></i>
+        <i class="right-button far fa-comment-alt fa-lg"></i>
+        <i class="right-button fas fa-angry fa-lg"></i>
+      </div>
+    </div>
 
     <script src="/scripts/Roomscripts.js"></script>
   </body>

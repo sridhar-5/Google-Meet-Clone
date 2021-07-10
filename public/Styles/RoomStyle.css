@@ -6,3 +6,73 @@ video {
   height: 300px;
   width: 400px;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  display: flex;
+  height: 92.5vh;
+  margin: 0;
+  padding: 0;
+}
+.main_left {
+  display: flex;
+  flex: 0.8;
+  flex-direction: column;
+}
+.main_right {
+  flex: 0.2;
+  display: flex;
+}
+.main_left_videos {
+  padding: 0;
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: rgb(32, 33, 36);
+}
+.main_controls {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(32, 33, 36);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meeting_id {
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Roboto", sans-serif;
+}
+
+.main_middle_controls {
+  display: flex;
+}
+
+.button {
+  display: flex;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: rgb(61, 64, 67);
+  margin-left: 15px;
+}
+
+.right-button {
+  justify-content: space-evenly;
+  display: flex;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.main_right_controls {
+  display: flex;
+  margin-right: 15px;
+}

@@ -3,24 +3,25 @@ const app = Express();
 const http = require("http");
 const server = http.createServer(app);
 const { v4: uuidv4 } = require("uuid");
+const { ExpressPeerServer } = require("peer");
+const peerServer = ExpressPeerServer(server, { debug: true });
 const HomePage = require("./routes/HomePage");
-const GenerateIdAndRedirect = require("./routes/Generate_UUiD_and_Redirect");
+//const GenerateIdAndRedirect = require("./routes/Generate_UUiD_and_Redirect");
 const io = require("socket.io")(server);
-const { roomID } = require("./routes/Generate_UUiD_and_Redirect");
-
+const GenerateIdAndRedirect = require("./routes/Generate_UUiD_and_Redirect");
 app.use(Express.json());
 app.use(Express.static("./public"));
-
+app.use("/peerjs", peerServer);
 app.set("view engine", "ejs");
 
 app.use("/", HomePage);
 app.use("/room", GenerateIdAndRedirect);
 
 io.on("connection", (socket) => {
-  socket.on("join-room", (roomID) => {
+  socket.on("join-room", (roomID, id) => {
     socket.join(roomID);
     console.log("request reached server");
-    socket.to(roomID).broadcast.emit("user-connected");
+    socket.broadcast.emit("user-connected", id);
   });
 });
 
