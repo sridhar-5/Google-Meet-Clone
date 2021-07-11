@@ -22,4 +22,3 @@ Firsly, The Frontend of the Home Page is made with html (Yeah, Very Very Silly. 
 ![image_2_Meet](Readme-images/Meeting.png)
 
 
-### Project status : in-progress
