@@ -31,7 +31,30 @@
         </div>
       </div>
       <div class="main_right">
-        <h3>Chat</h3>
+        <div class="main_chat_window">
+          <div class="chat-heading">
+            <div class="main_heading">
+              <div class="chat_header">in-chat messages</div>
+              <i class="fas fa-times"></i>
+            </div>
+            <div class="chat_info">
+              Messages can only be seen by people in call and are deleted when
+              call ends.
+            </div>
+          </div>
+          <ul class="messages">
+            <!-- Here lies the in meeting chat messages-->
+          </ul>
+        </div>
+
+        <div class="main_message_input_container">
+          <input
+            type="text"
+            id="chat-message"
+            placeholder="Send a message to everyone"
+          />
+          <i id="send" class="fas fa-paper-plane"></i>
+        </div>
       </div>
     </div>
     <div class="main_controls">
