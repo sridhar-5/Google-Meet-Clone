@@ -18,4 +18,8 @@ Firsly, The Frontend of the Home Page is made with html (Yeah, Very Very Silly. 
 - Ability to send and recieve messages
 - Adding buttons in the video chat Ex: Mute/unmute, video on/off
 
+![image_1_Home](Readme-images/Home.png)
+![image_2_Meet](Readme-images/Meeting.png)
+
+
 ### Project status : in-progress
