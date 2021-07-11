@@ -123,5 +123,5 @@ function renderJoin() {
 joinClass.addEventListener("click", TurnColorBlue);
 
 function TurnColorBlue() {
-  joinClass.style.color = "blue";
+  //function still left
 }

@@ -131,6 +131,7 @@
 
 .meetingcodefield {
   display: flex;
+  align-self: flex-start;
 }
 
 #meetingcode {
@@ -206,9 +207,18 @@
   max-width: 412px;
 }
 
+.meetingcodeform {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
 .Join {
   display: flex;
-  align-self: center;
-  margin-top: 50px;
+  align-items: center;
+  justify-content: flex-end;
   cursor: pointer;
+}
+.Join:hover {
+  color: skyblue;
 }
