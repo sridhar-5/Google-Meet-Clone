@@ -108,8 +108,14 @@ function changeTheColorOfSend(event) {
 
 //adding event listener to the send button
 send.addEventListener("click", sendMessage);
+//enter key
+document.addEventListener("keydown", function (event) {
+  if (event.code == "Enter") {
+    sendMessage();
+  }
+});
 
-function sendMessage(event) {
+function sendMessage() {
   var messageText = inputText.value;
   if (messageText) {
     //emit the message text
