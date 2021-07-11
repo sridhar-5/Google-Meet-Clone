@@ -200,3 +200,13 @@ function DisplayVideoMuteIcon() {
   //removing video slash icon meaning video is now on
   VideoButton.classList.remove("fa-video-slash");
 }
+
+//disconnect from the call
+const disconnectCall = document.getElementById("disconnectCall");
+
+//adding event listener
+disconnectCall.addEventListener("click", DisconnectFromTheCall);
+
+function DisconnectFromTheCall() {
+  //Disconnect from the call;
+}

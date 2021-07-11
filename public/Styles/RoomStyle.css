@@ -62,6 +62,7 @@ body {
   border-radius: 50%;
   background-color: rgb(61, 64, 67);
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .right-button {
@@ -70,6 +71,7 @@ body {
   padding: 5px;
   border-radius: 50%;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .main_right_controls {

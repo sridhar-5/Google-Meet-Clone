@@ -107,3 +107,21 @@ function LoadContent(currentConcept) {
   text.innerHTML = slideshowHeads[currentConcept];
   infotext.innerHTML = slideshowTexts[currentConcept];
 }
+
+const meetingcode = document.getElementById("meetingcode");
+const joinClass = document.querySelector(".Join");
+meetingcode.addEventListener("input", renderJoin);
+
+function renderJoin() {
+  if (meetingcode.value) {
+    joinClass.innerHTML = `Join`;
+  } else {
+    joinClass.innerHTML = ``;
+  }
+}
+
+joinClass.addEventListener("click", TurnColorBlue);
+
+function TurnColorBlue() {
+  joinClass.style.color = "blue";
+}
