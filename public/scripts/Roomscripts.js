@@ -3,7 +3,7 @@ var socket = io();
 const videoGrid = document.querySelector(".videoGrid");
 const videoHolder = document.createElement("video");
 videoHolder.muted = true;
-let VideoStream;
+var VideoStream;
 //what this does is that it asks user for his media control
 //like chrome permissions for the video and audio
 //getUserMedia takes in an object
@@ -14,10 +14,10 @@ navigator.mediaDevices
     //we need video so this is true
     video: true,
     //we also need the audio then so audio is true
-    audio: false,
+    audio: true,
   })
   .then((stream) => {
-    VideoStream: stream;
+    VideoStream = stream;
     PlayVideoStream(videoHolder, stream);
 
     socket.on("user-connected", (userId) => {
@@ -135,3 +135,68 @@ socket.on("chat message", (message) => {
   chatWindowTexts.appendChild(messageElement);
   window.scrollTo(0, document.body.scrollHeight);
 });
+
+//getting the mute button here
+const MuteButton = document.getElementById("MicButton");
+
+//adding event listener
+MuteButton.addEventListener("click", Mute_if_Mic_Is_On_Else_Of);
+
+function Mute_if_Mic_Is_On_Else_Of() {
+  //this is your Audio track
+  const CheckMic = VideoStream.getAudioTracks()[0].enabled;
+
+  if (CheckMic) {
+    VideoStream.getAudioTracks()[0].enabled = false;
+    DisplayUnMuteIcon();
+  } else {
+    VideoStream.getAudioTracks()[0].enabled = true;
+    DisplayMuteIcon();
+  }
+}
+
+function DisplayUnMuteIcon() {
+  //const unMute = `<i class="fas fa-microphone-slash fa-lg"></i>`;
+  //MuteButton.innerHTML = unMute;
+  MuteButton.classList.remove("fa-microphone");
+  MuteButton.classList.add("fa-microphone-slash");
+}
+
+function DisplayMuteIcon() {
+  //const Mute = `<i class="fas fa-microphone fa-lg"></i>`;
+  //MuteButton.innerHTML = Mute;
+  MuteButton.classList.remove("fa-microphone-slash");
+  MuteButton.classList.add("fa-microphone");
+}
+
+const VideoButton = document.getElementById("VideoButton");
+
+//adding event listener to video button
+VideoButton.addEventListener("click", MuteVideoUnMuteVideo);
+
+function MuteVideoUnMuteVideo() {
+  //this is your Audio track
+  const CheckVideo = VideoStream.getVideoTracks()[0].enabled;
+
+  if (CheckVideo) {
+    VideoStream.getVideoTracks()[0].enabled = false;
+    DisplayVideoUnMuteIcon();
+  } else {
+    VideoStream.getVideoTracks()[0].enabled = true;
+    DisplayVideoMuteIcon();
+  }
+}
+
+function DisplayVideoUnMuteIcon() {
+  //replace with unmute video icon
+  VideoButton.classList.remove("fa-video");
+  //video is now off
+  VideoButton.classList.add("fa-video-slash");
+}
+
+function DisplayVideoMuteIcon() {
+  //replace with mute video icon
+  VideoButton.classList.add("fa-video");
+  //removing video slash icon meaning video is now on
+  VideoButton.classList.remove("fa-video-slash");
+}
