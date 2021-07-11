@@ -142,3 +142,13 @@ input {
   line-height: 15px;
   color: black;
 }
+
+li {
+  background-color: rgb(241, 243, 244);
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+}

@@ -14,7 +14,7 @@ navigator.mediaDevices
     //we need video so this is true
     video: true,
     //we also need the audio then so audio is true
-    audio: true,
+    audio: false,
   })
   .then((stream) => {
     VideoStream: stream;
@@ -91,3 +91,41 @@ if (Room_id) {
 
 const pageTitle = document.getElementById("title-id");
 pageTitle.innerHTML = `Meeting-${Room_id}`;
+
+//bringing input-field and the paper rocket button
+const inputText = document.getElementById("chat-message");
+const send = document.getElementById("send");
+
+inputText.addEventListener("input", changeTheColorOfSend);
+
+function changeTheColorOfSend(event) {
+  if (inputText.value) {
+    send.style.color = `rgb(55,118,224)`;
+  } else {
+    send.style.color = `grey`;
+  }
+}
+
+//adding event listener to the send button
+send.addEventListener("click", sendMessage);
+
+function sendMessage(event) {
+  var messageText = inputText.value;
+  if (messageText) {
+    //emit the message text
+    socket.emit("chat message", messageText);
+    //and clear the chat
+    inputText.value = "";
+    send.style.color = `grey`;
+  }
+}
+
+const chatWindowTexts = document.getElementById("UserTexts");
+//recieving the message and adding that as a list
+socket.on("chat message", (message) => {
+  var messageElement = document.createElement("li");
+  console.log(message);
+  messageElement.textContent = message;
+  chatWindowTexts.appendChild(messageElement);
+  window.scrollTo(0, document.body.scrollHeight);
+});

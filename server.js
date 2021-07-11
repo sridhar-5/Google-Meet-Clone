@@ -23,6 +23,12 @@ io.on("connection", (socket) => {
     console.log("request reached server");
     socket.broadcast.emit("user-connected", id);
   });
+
+  socket.on("chat message", (message) => {
+    //if we do this we will not recieve our own messages but here we wnt our texts too
+    //socket.broadcast.emit("chat message", message);
+    io.emit("chat message", message);
+  });
 });
 
 port = process.env.PORT || 3000;
