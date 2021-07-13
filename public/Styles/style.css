@@ -1,224 +1,223 @@
-.navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: auto;
-  justify-content: space-between;
-}
-#Google {
-  font-family: "Poppins", sans-serif;
-}
-#meet {
-  font-family: "Poppins", sans-serif;
-  font-weight: 50px;
+:root {
+  --dark: rgba(0, 0, 0, 0.87);
+  --gray: #5f6368;
+  --blue: #1a73e8;
+  --blue-darker: #1b66c8;
 }
 
-.left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+* {
+  box-sizing: border-box;
 }
 
-.right > a {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
-}
-#google-meet {
-  height: 30px;
-  width: 50px;
-  display: flex;
-}
-
-#Google {
-  text-decoration: none;
-  color: grey;
-  font-size: 25px;
-}
-#meet {
-  text-decoration: none;
-  color: grey;
-  font: 24px;
-}
-.Google-apps {
-  width: 30px;
-  height: 30px;
-  margin-right: 0.5rem;
-  background-color: #fff;
-  background-image: url("//ssl.gstatic.com/gb/images/i1_1967ca6a.png");
-  background-position: -132px -38px;
-  opacity: 0.5;
-  border: none;
-  cursor: pointer;
-}
-
-.avatar {
-  border-radius: 50%;
-  height: 34px;
-}
-
-#date {
-  display: flex;
-  align-items: center;
-  font-family: "Roboto", sans-serif;
-}
-
-.mainbody {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.bodyLeft {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin: 150px 0 0 200px;
-  font-family: "Roboto", sans-serif;
-}
-.Maincaption {
-  font-size: 50px;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Secondarycaption {
-  font-size: 50px;
-  display: flex;
-  letter-spacing: 1px;
-  align-items: center;
-}
-
-.description {
-  display: flex;
-  margin-top: 15px;
-  font-size: 18px;
-  line-height: 1.4em;
-}
-.meetingControls {
-  display: flex;
-  flex-direction: row;
-}
-.startmeeting {
-  font-family: "Noto Sans JP", sans-serif;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: rgb(52, 116, 224);
-  color: white;
-  margin: 50px 30px 0 0;
-  font-size: 17px;
-  border-style: none;
-  padding: 10px 15px 10px 10px;
-  border-radius: 3px;
-  width: fit-content;
-}
-.videoicon {
-  display: flex;
-}
-.meetbuttontext {
-  display: flex;
-}
-
-.meetingcodefield {
-  display: flex;
-  align-self: flex-start;
-}
-
-#meetingcode {
-  background-color: white;
-  background-image: url("../assets/keyboard.svg");
-  background-repeat: no-repeat;
-  font-size: 17px;
-  font-family: "Noto Sans JP", sans-serif;
-  margin: 50px 10px 0 0;
-  padding: 12px 20px 12px 40px;
-  background-position: 10px 13px;
-  height: fit-content;
-  border-radius: 3px;
-  width: 200px;
-  border: 1px solid grey;
-}
-
-.bodyRight {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 150px 250px 0 0;
-}
-
-.imageshow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.imageshow > button {
-  border: none;
-  background-color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 50%;
-}
-
-.prev-btn:focus {
-  background-color: lightgrey;
-}
-.next-btn:focus {
-  background-color: lightgrey;
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-self: flex-start;
-  flex-wrap: wrap;
-  height: fit-content;
-}
-#info {
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  align-self: center;
-  justify-self: start;
-  font-weight: 250;
-  font-size: 30px;
-  color: grey;
-  padding: 0;
+html,
+body {
   margin: 0;
+  min-height: 100vh;
 }
 
-#infotext {
+body {
   display: flex;
-  font-size: 15px;
-  font-family: "Noto Sans JP", sans-serif;
-  flex-wrap: wrap;
-  text-align: center;
-  max-width: 412px;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+  color: var(--dark);
 }
 
-.meetingcodeform {
+nav {
+  height: 64px;
   display: flex;
-  flex-direction: row;
-  margin-top: 50px;
-}
-
-.Join {
-  display: flex;
+  padding: 15px;
   align-items: center;
-  justify-content: flex-end;
+  color: var(--gray);
+  gap: 1px;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  gap: 4px;
   cursor: pointer;
 }
-.Join:hover {
-  color: skyblue;
+
+.logo-img {
+  margin-bottom: -3px;
+}
+
+.logo-txt {
+  font-size: 21px;
+  align-self: center;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.circle:hover {
+  background-color: rgba(98, 98, 98, 0.1);
+}
+
+.pfp {
+  border-radius: 50%;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.main-container {
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 500px;
+}
+
+.title {
+  font-size: 35px;
+}
+
+.subtitle {
+  color: var(--gray);
+}
+
+.forms {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.rounded {
+  border-radius: 5px;
+  height: 48px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.new-meeting {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: var(--blue);
+  color: white;
+  width: 150px;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.new-meeting:hover {
+  background: var(--blue-darker);
+}
+
+.join-meeting {
+  display: flex;
+  gap: 15px;
+}
+
+.meet-code {
+  display: flex;
+  border: 1px solid #aaa;
+  padding: 0 5px;
+  color: var(--gray);
+}
+
+.meet-code span {
+  align-self: center;
+  padding: 0 10px;
+}
+
+.meet-code > input {
+  outline: none;
+  border: none;
+  color: var(--dark);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.meet-code:hover {
+  border: 1px solid var(--gray);
+}
+
+.meet-code:focus-within {
+  border: 1px solid var(--blue);
+  box-shadow: 1px 0 var(--blue), -1px 0 var(--blue), 0 1px var(--blue),
+    0 -1px var(--blue);
+}
+
+.join-meeting .join {
+  border: none;
+  background: transparent;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.join-meeting .join:disabled {
+  cursor: default;
+  color: var(--gray);
+}
+
+.meet-code:not(:focus-within) + .hidden {
+  opacity: 0;
+}
+
+.promos {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.promo-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.img-row {
+  display: flex;
+  align-items: center;
+}
+
+.img-row img {
+  padding: 20px 5px;
+  max-height: 370px;
+  object-fit: contain;
+}
+
+.promo-title {
+  font-size: 24px;
+}
+
+.promo-subtitle {
+  max-width: 340px;
+  align-self: center;
+  font-size: 15px;
+}
+
+.slide-0 .prev-slide,
+.slide-3 .next-slide {
+  pointer-events: none;
+  color: rgba(98, 98, 98, 0.4);
+}
+
+@media screen and (max-width: 1000px) {
+  .main-container {
+    flex-direction: column;
+    text-align: center;
+  }
 }

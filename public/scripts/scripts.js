@@ -1,127 +1,73 @@
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+// Mimic jQuery like selection
+const $ = (selector) => document.querySelector(selector);
 
-const Days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-const time = new Date();
-const d = time.toLocaleString("en-US", {
-  hour: "numeric",
-  minute: "numeric",
-  hour12: true,
+// Sets date and time in the nav bar
+const computeDateTime = () => {
+  const date = new Date();
+  $(".datetime").innerHTML = `${date.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  })} • ${date.toLocaleDateString([], {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+  })}`;
+  setTimeout(computeDateTime, 60000);
+};
+computeDateTime();
+
+// Show join button once the field is filled
+const joinBtn = $(".join");
+$(".meeting-code").addEventListener("keyup", (e) => {
+  joinBtn.disabled = !e.target.value;
+  joinBtn.classList[e.target.value ? "remove" : "add"]("hidden");
 });
 
-const DisplayDateOnP = document.getElementById("date");
-
-DisplayDateOnP.innerHTML =
-  `${d}` +
-  "  " +
-  `${Days[time.getDay()]}` +
-  ",  " +
-  `${monthNames[time.getMonth()]}` +
-  " " +
-  `${time.getDate()}`;
-DisplayDateOnP.style.color = "grey";
-DisplayDateOnP.style.fontSize = "20px";
-
-const slideshowHeads = [
-  `Get a link you can share`,
-  `See everyone together`,
-  `Plan ahead`,
-  `Your meeting is safe`,
+// Slideshow
+let currentSlide = 0;
+const slideshow = [
+  [
+    "Get a link you can share",
+    "Click <strong>New meeting</strong> to get a link you can send to people you want ot meet with",
+  ],
+  [
+    "See everyone together",
+    "To see more people at the same time, go to Change layout in More options menu",
+  ],
+  [
+    "Plan ahead",
+    "Click <strong>New meeting</strong> to schedule the meetings in Google Calender and send invites to participants",
+  ],
+  [
+    "Your meeting is safe",
+    "No one can join a meeting unless invited or admitted by the host",
+  ],
 ];
 
-const slideshowTexts = [
-  `Click New meeting to get a link you can send to people you want ot meet with`,
-  `To see more peopleat the same time, go to Change layout in More options menu`,
-  `Click New meeting to schedule the meetings in Google Calender and send invites to participants`,
-  `No one can join a meeting unless invited or admitted by the host`,
-];
+const promoBox = $(".promo-box");
+const [headingElem, textElem, imgElem] = [
+  ".promo-title",
+  ".promo-subtitle",
+  "img",
+].map((sel) => promoBox.querySelector(sel));
+const setSlide = () => {
+  [headingElem.innerHTML, textElem.innerHTML, imgElem.src] = [
+    ...slideshow[currentSlide],
+    `assets/img${currentSlide + 1}.svg`,
+  ];
+};
+setSlide();
 
-const images = [
-  "./assets/img1.svg",
-  "./assets/img2.svg",
-  "./assets/img3.svg",
-  "./assets/img4.svg",
-];
+const changeSlide = (change) => {
+  promoBox.classList.remove(`slide-${currentSlide}`);
+  promoBox.classList.add(`slide-${(currentSlide += change)}`);
+  setSlide();
+};
 
-//importing all the buttonsa and places to dynamically change things
-const nextbutton = document.querySelector(".next-btn");
-const prevbutton = document.querySelector(".prev-btn");
-const image = document.querySelector(".change-image");
-const text = document.getElementById("info");
-const infotext = document.getElementById("infotext");
-//setting default image and default content
-window.addEventListener("DOMContentLoaded", DefaultContentLoad);
-
-function DefaultContentLoad() {
-  image.src = images[0];
-  text.innerHTML = slideshowHeads[0];
-  infotext.innerHTML = slideshowTexts[0];
-}
-
-var currentConcept = 0;
-//adding event listeners to the previious and next buttons
-nextbutton.addEventListener("click", nextconcept);
-
-function nextconcept(event) {
-  currentConcept++;
-  if (currentConcept > images.length - 1) {
-    nextbutton.style.color = "lightgrey";
-    currentConcept = images.length - 1;
-  }
-  if (currentConcept > 0 && currentConcept < images.length - 1) {
-    prevbutton.style.color = "grey";
-    nextbutton.style.color = "grey";
-  }
-  LoadContent(currentConcept);
-}
-
-//adding event listener to the prevbutton
-prevbutton.addEventListener("click", prevConcept);
-
-function prevConcept() {
-  currentConcept--;
-  if (currentConcept < 0) {
-    prevbutton.style.color = "lightgrey";
-    currentConcept = 0;
-  }
-  if (currentConcept > 0 && currentConcept < images.length - 1) {
-    prevbutton.style.color = "grey";
-    nextbutton.style.color = "grey";
-  }
-  LoadContent(currentConcept);
-}
-function LoadContent(currentConcept) {
-  image.src = images[currentConcept];
-  text.innerHTML = slideshowHeads[currentConcept];
-  infotext.innerHTML = slideshowTexts[currentConcept];
-}
-
-const meetingcode = document.getElementById("meetingcode");
-const joinClass = document.querySelector(".Join");
-meetingcode.addEventListener("input", renderJoin);
-
-function renderJoin() {
-  if (meetingcode.value) {
-    joinClass.innerHTML = `Join`;
-  } else {
-    joinClass.innerHTML = ``;
-  }
-}
-
-joinClass.addEventListener("click", TurnColorBlue);
-
-function TurnColorBlue() {
-  //function still left
-}
+// Button event listeners for slideshow
+[
+  [".prev-slide", -1],
+  [".next-slide", 1],
+].forEach(([selector, change]) =>
+  $(selector).addEventListener("click", (e) => changeSlide(change))
+);
