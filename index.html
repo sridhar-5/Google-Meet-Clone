@@ -5,107 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Meet</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="Styles/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
+      rel="icon"
+      href="assets/google-meet.svg"
+      sizes="any"
+      type="image/svg+xml"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./Styles/style.css" />
   </head>
-
-  <nav class="navbar">
-    <div class="left">
-      <img id="google-meet" src="./assets/google-meet.svg" />
-      <a href="#" id="Google"
-        ><span id="Google">Google </span> <span id="meet">Meet</span></a
-      >
-    </div>
-    <div class="right">
-      <!--here is the date with time -->
-      <p id="date"></p>
-      <a href="#" id="Support"
-        ><img src="./assets/support.svg" alt="this is the support button" />
-      </a>
-      <a href="#" id="Support"
-        ><img src="./assets/Feedback.svg" alt="this is the feedback icon" />
-      </a>
-      <a href="#" id="Support"
-        ><img src="./assets/settings.svg" alt="this is a settings icon" />
-      </a>
-      <button class="Google-apps"></button>
-      <a href="#" id="email-avatar"
-        ><img
-          class="avatar"
-          src="./assets/avatar.jpeg"
-          jh
-          alt="this is the email logo"
-      /></a>
-    </div>
-  </nav>
-
   <body>
-    <div class="mainbody">
-      <div class="bodyLeft">
-        <div class="Maincaption">Premium video meetings.</div>
-        <div class="Secondarycaption">Now free for everyone.</div>
-        <div class="description">
-          We re-engineered the service we built for secure business <br />
-          meetings, Google Meet, to make it free and available for all.
+    <nav>
+      <div class="logo">
+        <img
+          class="logo-img"
+          src="assets/gmeet-logo.png"
+          alt="Google Meet Logo"
+        />
+        <div class="logo-txt">Meet</div>
+      </div>
+      <div class="grow"></div>
+      <div class="datetime"></div>
+      <div class="circle">
+        <span class="material-icons-outlined">help_outline</span>
+      </div>
+      <div class="circle">
+        <span class="material-icons-outlined">feedback</span>
+      </div>
+      <div class="circle">
+        <span class="material-icons-outlined">settings</span>
+      </div>
+      <div class="circle">
+        <span class="material-icons-outlined">apps</span>
+      </div>
+      <img class="pfp" src="assets/avatar.jpeg" alt="avatar" />
+    </nav>
+    <div class="main-container">
+      <div class="container">
+        <div class="title">
+          Premium video meetings.<br />Now free for everyone.
         </div>
-
-        <div class="meetingControls">
-          <form action="http://localhost:3000/room" method="GET">
-            <button class="startmeeting">
-              <img class="videoicon" src="./assets/videocall.svg" />
-              <div class="meetbuttontext">New meeting</div>
+        <div class="subtitle">
+          We re-engineered the service we built for secure business meetings,
+          Google Meet, to make it free and available for all.
+        </div>
+        <div class="forms">
+          <form action="/room" method="GET">
+            <button class="new-meeting rounded">
+              <span class="material-icons-outlined">video_call</span>
+              <div>New meeting</div>
             </button>
           </form>
-          <form id="meetingcodeform" action="" method="GET">
-            <div class="meetingcodefield">
-              <input id="meetingcode" placeholder="Enter a code or link" />
-            </div>
-            <div class="Join"></div>
+          <form class="join-meeting">
+            <label class="rounded meet-code">
+              <span class="material-icons">keyboard</span>
+              <input
+                type="text"
+                class="meeting-code"
+                placeholder="Enter code or link"
+              />
+            </label>
+            <input
+              type="submit"
+              value="Join"
+              class="rounded join hidden"
+              disabled
+            />
           </form>
-
         </div>
       </div>
-      <div class="bodyRight">
-        <div class="imageshow">
-          <button class="prev-btn">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="img-container">
-            <img class="change-image" src="./assets/img1.svg" alt="img1" />
+      <div class="promos">
+        <div class="promo-box slide-0">
+          <div class="img-row">
+            <div class="circle prev-slide">
+              <span class="material-icons-outlined">keyboard_arrow_left</span>
+            </div>
+            <img />
+            <div class="circle next-slide">
+              <span class="material-icons-outlined">keyboard_arrow_right</span>
+            </div>
           </div>
-          <button class="next-btn">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-        <div class="text">
-          <p id="info">Get a link you can share</p>
-          <div id="infotext"></div>
+          <div class="promo-title"></div>
+          <div class="promo-subtitle"></div>
         </div>
       </div>
     </div>
-
-    <script src="./scripts/scripts.js"></script>
+    <script src="scripts/scripts.js"></script>
   </body>
 </html>
